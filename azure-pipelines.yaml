@@ -1,0 +1,31 @@
+trigger:
+  - master
+
+variables:
+  - group: Common build-time Configurations
+  # Directory containing the package.json and (optionally) .npmrc
+  - name: filePath
+    value: '$(System.DefaultWorkingDirectory)/pom.xml'
+
+# ===================================================
+# ==================== Resources ====================
+# ===================================================
+resources:
+  repositories:
+    - repository: templates
+      type: git
+      name: SDLC/PipelineTemplates
+      ref: master
+
+# ===================================================
+# ======================= Main ======================
+# ===================================================
+extends:
+  template: processes/generic-process-lib.yaml@templates
+  parameters:
+    flavour:
+      build: java-lib
+
+    buildParameters:
+      - name: filePath
+        value: ${{ variables['filePath'] }}
