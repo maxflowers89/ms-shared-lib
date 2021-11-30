@@ -1,6 +1,6 @@
 ##**RTS-CommonConfigLib**
 
-Questa libreria contiene pricipalmente i bean e le relative configurazioni che solitamente vengono utilizzate nei microservizi illimity e il sistema di logging. Segue approfondimento package per package.
+Questa libreria contiene pricipalmente i bean e le relative configurazioni che solitamente vengono utilizzate nei microservizi e il sistema di logging. Segue approfondimento package per package.
 
 1. annotations
    - LogAroundThis: annotazione da mettere a livello di metodo per attivare il sistema di logging
